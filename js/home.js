@@ -173,10 +173,12 @@ function nextSequencePresentation() {
 		$("#presentation-name-clyde").show();
 	}
 	
-	if (HOME_PRESENTATION_STATE === 17) { 
+	if (HOME_PRESENTATION_STATE === 18) { 
 		clearInterval(HOME_PRESENTATION_TIMER);
 		HOME_PRESENTATION_TIMER = -1;
-		
+	
+		console.log($("#start"));
+		$("#start").css("display", "block");
 		startTrailer();
 	} else { 
 		HOME_PRESENTATION_STATE ++;

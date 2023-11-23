@@ -1,6 +1,9 @@
 #home h1 { 
 	text-align: center;
 	font-size: 78px;
+	margin-left: -100px;
+	margin-right: -100px;
+	text-align: center;
 }
 #home h3 { 
 	position: absolute;
@@ -19,7 +22,7 @@
 	background-color: #000;
 	position: absolute;
 	top: 10px;
-	left: 182px;
+	left: 100px;
 	height: 100px;
 	width: 118px;
 }
@@ -111,6 +114,13 @@
 	bottom: 100px;
 	width: 500px;
 	height: 50px;
+}
+
+#start {
+	position: absolute;
+	top: 470px;
+	left: 50%;
+	display: none;
 }
 
 @media screen and (min-height:1200px), screen and (min-device-height : 1200px) { 

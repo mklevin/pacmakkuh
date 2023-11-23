@@ -240,6 +240,7 @@ function eatGhost(ghost) {
 		eval('GHOST_' + ghost.toUpperCase() + '_EAT_TIMER = new Timer("cancelEatGhost(\'' + ghost + '\')", GHOST_EAT_TIME)');
 		eval('GHOST_' + ghost.toUpperCase() + '_EAT_TIMER.pause()');
 	}
+	revealNextHanukkah();
 	resumeGhosts();
 	resumePacman();
 	LOCK = false;

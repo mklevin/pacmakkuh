@@ -7,7 +7,9 @@
 		<meta property="og:image" content="https://pacman-e281c.firebaseapp.com/img/preview.png">
 		<meta property="og:url" content="https://pacman-e281c.firebaseapp.com/">
 		<meta property="og:description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website.">
-		<meta property="og:title" content="Pacmakkuh">
+		<meta property="og:title" content="Pac-makkuh">
+
+		<img id="donut" src="img/donut.png" alt="donut" style="display: none;"/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
 		<meta name="description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website." />
@@ -20,6 +22,7 @@
 		<!--<script type="text/javascript" src="js/jquery-mobile.js"></script>-->
 		<script type="text/javascript" src="js/jquery-buzz.js"></script>
 		
+		<script type="text/javascript" src="js/hanukkah.js"></script>
 		<script type="text/javascript" src="js/game.js"></script>
 		<script type="text/javascript" src="js/tools.js"></script>
 		<script type="text/javascript" src="js/board.js"></script>
@@ -121,7 +124,7 @@
 				
 				$("body").keydown(function(e) { 
 				
-					if (HOME) { 
+					if (HOME && HOME_PRESENTATION_STATE > 17) { 
 						
 						initGame(true);
 						
@@ -156,7 +159,7 @@
 								} else { 
 									$("#canvas-paths").hide();
 								}*/
-							} else if (e.keyCode === 80 && !PACMAN_DEAD && !LOCK) { 
+							} else if ((e.keyCode === 27 || e.keyCode === 80) && !PACMAN_DEAD && !LOCK) { 
 								if (PAUSE) { 
 									resumeGame();
 								} else { 
@@ -171,7 +174,7 @@
 			});
 		</script>
 	
-		<title>Pacmakkuh</title>
+		<title>Pac-makkuh</title>
 	</head>
 		
 	<body>
@@ -187,29 +190,30 @@
 					<tr><td>Arrow Down : </td><td>Move Down</td></tr>
 					<tr><td>Arrow Up : </td><td>Move Up</td></tr>
 					<tr><td colspan="2">&nbsp;</td></tr>
-					<tr><td>P : </td><td>PAUSE</td></tr>
+					<tr><td>P / ESC: </td><td>PAUSE</td></tr>
 				</tbody>
 			</table>
 		</div>
 	
 		<div id="home">
-			<h1>pac-man</h1>
+			<h1>pac-makkuh</h1>
 			<canvas id="canvas-home-title-pacman"></canvas>
 			<div id="presentation">
 				<div id="presentation-titles">character &nbsp;/&nbsp; nickname</div>
-				<canvas id="canvas-presentation-blinky"></canvas><div id="presentation-character-blinky">- shadow</div><div id="presentation-name-blinky">"blinky"</div>
-				<canvas id="canvas-presentation-pinky"></canvas><div id="presentation-character-pinky">- speedy</div><div id="presentation-name-pinky">"pinky"</div>
-				<canvas id="canvas-presentation-inky"></canvas><div id="presentation-character-inky">- bashful</div><div id="presentation-name-inky">"inky"</div>
-				<canvas id="canvas-presentation-clyde"></canvas><div id="presentation-character-clyde">- pokey</div><div id="presentation-name-clyde">"clyde"</div>
+				<canvas id="canvas-presentation-blinky"></canvas><div id="presentation-character-blinky">- shadow</div><div id="presentation-name-blinky">"antiochus"</div>
+				<canvas id="canvas-presentation-pinky"></canvas><div id="presentation-character-pinky">- speedy</div><div id="presentation-name-pinky">"maccabee"</div>
+				<canvas id="canvas-presentation-inky"></canvas><div id="presentation-character-inky">- bashful</div><div id="presentation-name-inky">"judith"</div>
+				<canvas id="canvas-presentation-clyde"></canvas><div id="presentation-character-clyde">- pokey</div><div id="presentation-name-clyde">"a dreidel"</div>
 			</div>
 			<canvas id="trailer"></canvas>
+			<div id="start">START</div>
 			<div class="help-button">- help -</div>
 			<a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>
 		</div>
 	
 		<div id="panel">
-			<h1>pac-man</h1>
-			<a class="putchu" target="_top" href="http://www.putchu.be"><img src="http://www.putchu.be/img/intro/player.png" height="65px" alt="Putchu">www.putchu.be</a>
+			<h1>pac-makkuh</h1>
+			<a class="putchu" target="_top" href="http://www.putchu.be">full list</a>
 			<canvas id="canvas-panel-title-pacman"></canvas>
 			<div id="score"><h2>1UP</h2><span>00</span></div>
 			<div id="highscore"><h2>High Score</h2><span>00</span></div>
@@ -238,6 +242,20 @@
 			</div>
 			<canvas id="canvas-lifes"></canvas>
 			<canvas id="canvas-level-fruits"></canvas>
+			<div id="hanukkah">
+				<h3>The List</h3>
+				<ul>
+					<li id="hanukkah-0">???</li>
+					<li id="hanukkah-1">???</li>
+					<li id="hanukkah-2">???</li>
+					<li id="hanukkah-3">???</li>
+					<li id="hanukkah-4">???</li>
+					<li id="hanukkah-5">???</li>
+					<li id="hanukkah-6">???</li>
+					<li id="hanukkah-7">???</li>
+					<li id="hanukkah-8">???</li>
+				</ul>
+			</div>
 			<div id="message"></div>
 			<div class="help-button">- help -</div>
 			<a class="sound" href="javascript:void(0);" data-sound="on"><img src="img/sound-on.png" alt="" border="0"></a>

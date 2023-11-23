@@ -103,7 +103,7 @@ function eatFruit() {
 	playEatFruitSound();
 	
 	var s = 0;
-	if (FRUIT === "cherry")  s = 100;
+	if (FRUIT === "cherry") s = 100;
 	else if (FRUIT === "strawberry")  s = 300;
 	else if (FRUIT === "orange")  s = 500;
 	else if (FRUIT === "apple")  s = 700;
@@ -113,6 +113,7 @@ function eatFruit() {
 	else if (FRUIT === "key")  s = 5000;
 	
 	score(s, "fruit");
+	revealNextHanukkah();
 	cancelFruit();
 }
 
@@ -499,41 +500,53 @@ function drawStrawberry(ctx, x, y, size) {
 	ctx.fill();
 	ctx.closePath();
 }
+
+function drawImage(ctx, url, x, y, size) {
+	const img = new Image();
+	img.src = url;
+	img.context = ctx;
+	const trueX = x - (size / 2);
+	const trueY = y - (size / 2) + 1;
+	ctx.drawImage(img, trueX, trueY, size, size);
+}
+
 function drawCherry(ctx, x, y, size) {  
+	drawImage(ctx, "img/donut.png", x, y, size);
 	
-	ctx.translate(x - (size / 2), y - (size / 2) + 1);
+	// ctx.translate(x - (size / 2), y - (size / 2) + 1);
 	
-	ctx.beginPath();
-	ctx.fillStyle = "#ff0000";
+	// ctx.beginPath();
+	
+	// ctx.fillStyle = "#ff0000";
 
-	ctx.arc(size / 8, size - (size / 2.8), size / 4, Math.PI * 2, -Math.PI * 2, true);
-	ctx.arc(size - size / 3, size - (size / 4), size / 4, Math.PI * 2, -Math.PI * 2, true);
+	// ctx.arc(size / 8, size - (size / 2.8), size / 4, Math.PI * 2, -Math.PI * 2, true);
+	// ctx.arc(size - size / 3, size - (size / 4), size / 4, Math.PI * 2, -Math.PI * 2, true);
 
-	ctx.fill();
-	ctx.closePath();
+	// ctx.fill();
+	// ctx.closePath();
 
-	ctx.beginPath();
-	ctx.fillStyle = "#670303";
+	// ctx.beginPath();
+	// ctx.fillStyle = "#670303";
 
-	ctx.arc(size / 7.2, size - (size / 2.25), size / 14, Math.PI * 2, -Math.PI * 2, true);
-	ctx.arc(size - size / 3, size - (size / 3), size / 14, Math.PI * 2, -Math.PI * 2, true);
+	// ctx.arc(size / 7.2, size - (size / 2.25), size / 14, Math.PI * 2, -Math.PI * 2, true);
+	// ctx.arc(size - size / 3, size - (size / 3), size / 14, Math.PI * 2, -Math.PI * 2, true);
 
-	ctx.fill();
-	ctx.closePath();
+	// ctx.fill();
+	// ctx.closePath();
 
-	ctx.beginPath();
-	ctx.strokeStyle = "#959817";
-	ctx.lineWidth = 2;
+	// ctx.beginPath();
+	// ctx.strokeStyle = "#959817";
+	// ctx.lineWidth = 2;
 
-	ctx.moveTo(size / 8, size - (size / 2));
-	ctx.bezierCurveTo(size / 6, size / 1.5, size / 7, size / 4, size - size / 4, size / 8);
-	ctx.moveTo(size - size / 2.5, size - size / 3);
-	ctx.bezierCurveTo(size / 1.3, size / 1.5, size / 3, size / 2.5, size - size / 4, size / 8);
+	// ctx.moveTo(size / 8, size - (size / 2));
+	// ctx.bezierCurveTo(size / 6, size / 1.5, size / 7, size / 4, size - size / 4, size / 8);
+	// ctx.moveTo(size - size / 2.5, size - size / 3);
+	// ctx.bezierCurveTo(size / 1.3, size / 1.5, size / 3, size / 2.5, size - size / 4, size / 8);
 
-	ctx.stroke();
-	ctx.closePath();
+	// ctx.stroke();
+	// ctx.closePath();
 
-	ctx.fillStyle = "#959817";
-	ctx.fillRect(size - size / 3, size / 12, size / 9, size / 9);
-	ctx.closePath();
+	// ctx.fillStyle = "#959817";
+	// ctx.fillRect(size - size / 3, size / 12, size / 9, size / 9);
+	// ctx.closePath();
 }
