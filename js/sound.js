@@ -28,8 +28,11 @@ var READY_SOUND = new buzz.sound([
 var DIE_SOUND = new buzz.sound([
     "./sound/die.mp3" 
 ]);
+var DREIDEL_SOUND = new buzz.sound([
+	"./sound/dreidel.mp3"
+]);
 
-var GROUP_SOUND = new buzz.group( [ EATING_SOUND, SIREN_SOUND, EAT_PILL_SOUND, EAT_GHOST_SOUND, READY_SOUND, DIE_SOUND, WAZA_SOUND, GHOST_EATEN_SOUND, EXTRA_LIFE_SOUND, EAT_FRUIT_SOUND ] );
+var GROUP_SOUND = new buzz.group( [ EATING_SOUND, SIREN_SOUND, EAT_PILL_SOUND, EAT_GHOST_SOUND, READY_SOUND, DIE_SOUND, WAZA_SOUND, GHOST_EATEN_SOUND, EXTRA_LIFE_SOUND, EAT_FRUIT_SOUND, DREIDEL_SOUND ] );
 
 var EATING_SOUND_LOOPING = false;
 
@@ -135,6 +138,19 @@ function playDieSound() {
 	if (isAvailableSound()) { 
 		GROUP_SOUND.stop();
 		DIE_SOUND.play();
+	}
+}
+
+function playDreidelSound() {
+	if (isAvailableSound()) {
+		DREIDEL_SOUND.loop();
+		DREIDEL_SOUND.play();
+	}
+}
+
+function stopDreidelSound() {
+	if (isAvailableSound) {
+		DREIDEL_SOUND.stop();
 	}
 }
 

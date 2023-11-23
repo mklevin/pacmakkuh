@@ -47,6 +47,30 @@ var GHOST_CLYDE_TRAILER_COLOR = "#f99c00";
 var GHOST_CLYDE_TRAILER_BODY_STATE = 3;
 var GHOST_CLYDE_TRAILER_STATE = 0;
 
+function initPreHome() {
+	HOME = true;
+	GAMEOVER = false;
+	LOCK = false;
+	PACMAN_DEAD = false;
+
+	$("#panel").hide();
+	$("#home").show();
+	$("#splash").show();
+	$("#presentation *").hide();
+	$("#main-title").hide();
+	$(".help-button").hide();
+	$(".sound").hide();
+	
+	var x = 50;
+	var y = 50;
+
+	$("body").on("click.openHome", () => {
+		$("body").off("click.openHome");
+		$("#splash").hide();
+		initHome();
+	});
+}
+
 function initHome() { 
 	HOME = true;
 	
@@ -54,10 +78,13 @@ function initHome() {
 	LOCK = false;
 	PACMAN_DEAD = false;
 	
-
 	$("#panel").hide();
 	$("#home").show();
-	$("#home h3 em").append( " - " + new Date().getFullYear() );
+	$("#main-title").show();
+	$(".help-button").show();
+	$(".sound").show();
+	
+	playDreidelSound();
 	
 	$('#help').fadeOut("slow");
 	
