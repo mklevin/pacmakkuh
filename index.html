@@ -92,7 +92,9 @@
 				
 				$(".putchu").click(function(e) { 
 					e.stopPropagation();
-					toggleAllHanukkah();
+					if (!PACMAN_DEAD && !LOCK) {
+						pauseGame();
+					}
 				});
 				
 				$("#home").on("click touchstart", function(e) { 
@@ -225,7 +227,7 @@
 	
 		<div id="panel">
 			<h1>pac-manukkah</h1>
-			<a class="putchu" target="_blank">full list</a>
+			<a class="putchu" target="_blank" href="https://docs.google.com/document/d/1J870F7VHPYzUwq-BjJgu_bi_Sl9onC86aWnrxKD1ZXc">full list</a>
 			<canvas id="canvas-panel-title-pacman"></canvas>
 			<div id="score"><h2>1UP</h2><span>00</span></div>
 			<div id="highscore"><h2>High Score</h2><span>00</span></div>
