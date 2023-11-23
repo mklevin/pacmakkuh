@@ -86,8 +86,9 @@
 					}
 				});
 				
-				$(".github,.putchu").click(function(e) { 
+				$(".putchu").click(function(e) { 
 					e.stopPropagation();
+					toggleAllHanukkah();
 				});
 				
 				$("#home").on("click touchstart", function(e) { 
@@ -213,7 +214,7 @@
 	
 		<div id="panel">
 			<h1>pac-makkuh</h1>
-			<a class="putchu" target="_top" href="http://www.putchu.be">full list</a>
+			<a class="putchu" target="_blank">full list</a>
 			<canvas id="canvas-panel-title-pacman"></canvas>
 			<div id="score"><h2>1UP</h2><span>00</span></div>
 			<div id="highscore"><h2>High Score</h2><span>00</span></div>

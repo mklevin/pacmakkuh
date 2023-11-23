@@ -10,6 +10,9 @@ var FRUIT_CANCEL_TIMER = null;
 var FRUIT_CANCEL_SPEED = 7500;
 var FRUIT = null;
 
+const DONUT = loadImage("img/donut.png");
+const MENORAH = loadImage("img/menorah.png");
+const DREIDEL = loadImage("img/dreidel.png");
 
 function initFruits() { 
 	var canvas = document.getElementById('canvas-fruits');
@@ -423,130 +426,28 @@ function drawApple(ctx, x, y, size) {
 }
 
 function drawOrange(ctx, x, y, size) { 
-
-	ctx.translate(x - (size / 2), y - (size / 2) - 1);
-
-	ctx.fillStyle = "#fcb424";
-	ctx.beginPath();
-	ctx.arc(size / 2, size / 2 + size / 9, (size / 2.2), Math.PI * 2, -Math.PI * 2, true);
-	ctx.fill();
-	ctx.closePath();
-
-	ctx.fillStyle = "black";
-	ctx.beginPath();
-	ctx.arc(size / 2, size / 6, (size / 7), Math.PI * 2, -Math.PI * 2, true);
-	ctx.fill();
-	ctx.closePath();
-
-	var mod = size / 23;
-	ctx.strokeStyle = "#24da1c";
-	ctx.lineWidth = 2.5;
-	ctx.beginPath();
-	ctx.moveTo(size / 2, size / 3);
-	ctx.lineTo(size / 2, size / 8);
-	ctx.lineTo(9 * mod, size / 9);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo(9 * mod, (size / 9));
-	ctx.lineTo( (9 * mod) + (size / 3), (size / 9) - 2);
-	ctx.stroke();
-	
-	ctx.closePath();
+	drawImage(ctx, "img/donut.png", x, y, size);
 }
 
 function drawStrawberry(ctx, x, y, size) { 
-	
-	ctx.translate(x - (size / 2), y - (size / 2) + 2);
-	
-	ctx.beginPath();
-	ctx.fillStyle = "#ff0000";
-
-	ctx.moveTo(size / 2, size - size / 18)
-	ctx.bezierCurveTo(0, size / 1.3, 0, -size / 9, size / 2, size / 6)
-	ctx.moveTo(size / 2, size - size / 18)
-	ctx.bezierCurveTo(size, size / 1.3, size, -size / 9, size / 2, size / 6)
-	
-	ctx.fill();
-	ctx.closePath();
-
-	ctx.fillStyle = "white";
-
-	ctx.fillRect(size / 4, size / 3, size / 18, size / 16)
-	ctx.fillRect(size / 2, size / 4, size / 18, size / 16)
-	ctx.fillRect(size - size / 3.5, size / 2.4, size / 18, size / 16)
-	ctx.fillRect(size - size / 2.2, size / 2, size / 18, size / 16)
-	ctx.fillRect(size / 2.6, size / 1.3, size / 18, size / 16)
-	ctx.fillRect(size / 3, size / 1.8, size / 18, size / 16)
-	ctx.fillRect(size / 1.6, size / 1.4, size / 18, size / 16)
-
-	ctx.beginPath();
-	ctx.fillStyle = "#24DA1D";
-
-	var mod = size / 23;
-	ctx.moveTo(6 * mod, 2 * mod);
-	ctx.lineTo(1 * mod, 8 * mod);
-	ctx.lineTo(6 * mod, 6 * mod);
-	ctx.lineTo(11 * mod, 11 * mod);
-	ctx.lineTo(16 * mod, 6 * mod);
-	ctx.lineTo(21 * mod, 8 * mod);
-	ctx.lineTo(17 * mod, 2 * mod);
-
-	ctx.moveTo(size / 2, 2 * mod);
-	ctx.lineTo(8 * mod, 0 * mod);
-	ctx.lineTo(15 * mod, 0 * mod);
-	ctx.lineTo(size / 2, 2 * mod);
-	
-	ctx.fill();
-	ctx.closePath();
-}
-
-function drawImage(ctx, url, x, y, size) {
-	const img = new Image();
-	img.src = url;
-	img.context = ctx;
-	const trueX = x - (size / 2);
-	const trueY = y - (size / 2) + 1;
-	ctx.drawImage(img, trueX, trueY, size, size);
+	drawImage(ctx, "img/menorah.png", x, y, size);
 }
 
 function drawCherry(ctx, x, y, size) {  
-	drawImage(ctx, "img/donut.png", x, y, size);
-	
-	// ctx.translate(x - (size / 2), y - (size / 2) + 1);
-	
-	// ctx.beginPath();
-	
-	// ctx.fillStyle = "#ff0000";
+	drawImage(ctx, "img/dreidel.png", x, y, size);
+}
 
-	// ctx.arc(size / 8, size - (size / 2.8), size / 4, Math.PI * 2, -Math.PI * 2, true);
-	// ctx.arc(size - size / 3, size - (size / 4), size / 4, Math.PI * 2, -Math.PI * 2, true);
+function drawImage(ctx, url, x, y, size) {
+	const img = loadImage(url);
+	img.context = ctx;
+	const trueX = x - (size / 2);
+	const trueY = y - (size / 2) + 1;
+	console.log(img);
+	ctx.drawImage(img, trueX, trueY, size, size);
+}
 
-	// ctx.fill();
-	// ctx.closePath();
-
-	// ctx.beginPath();
-	// ctx.fillStyle = "#670303";
-
-	// ctx.arc(size / 7.2, size - (size / 2.25), size / 14, Math.PI * 2, -Math.PI * 2, true);
-	// ctx.arc(size - size / 3, size - (size / 3), size / 14, Math.PI * 2, -Math.PI * 2, true);
-
-	// ctx.fill();
-	// ctx.closePath();
-
-	// ctx.beginPath();
-	// ctx.strokeStyle = "#959817";
-	// ctx.lineWidth = 2;
-
-	// ctx.moveTo(size / 8, size - (size / 2));
-	// ctx.bezierCurveTo(size / 6, size / 1.5, size / 7, size / 4, size - size / 4, size / 8);
-	// ctx.moveTo(size - size / 2.5, size - size / 3);
-	// ctx.bezierCurveTo(size / 1.3, size / 1.5, size / 3, size / 2.5, size - size / 4, size / 8);
-
-	// ctx.stroke();
-	// ctx.closePath();
-
-	// ctx.fillStyle = "#959817";
-	// ctx.fillRect(size - size / 3, size / 12, size / 9, size / 9);
-	// ctx.closePath();
+function loadImage(url) {
+	const img = new Image();
+	img.src = url;
+	return img;
 }

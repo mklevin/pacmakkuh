@@ -177,7 +177,6 @@ function nextSequencePresentation() {
 		clearInterval(HOME_PRESENTATION_TIMER);
 		HOME_PRESENTATION_TIMER = -1;
 	
-		console.log($("#start"));
 		$("#start").css("display", "block");
 		startTrailer();
 	} else { 
