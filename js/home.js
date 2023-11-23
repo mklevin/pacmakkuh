@@ -64,11 +64,15 @@ function initPreHome() {
 	var x = 50;
 	var y = 50;
 
-	$("body").on("click.openHome", () => {
+	var startHome = () => {
 		$("body").off("click.openHome");
+		$("body").off("keypress.openHome");
 		$("#splash").hide();
 		initHome();
-	});
+	};
+
+	$("body").on("click.openHome", startHome);
+	$("body").on("keypress.openHome", startHome);
 }
 
 function initHome() { 

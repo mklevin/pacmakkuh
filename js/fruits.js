@@ -10,9 +10,9 @@ var FRUIT_CANCEL_TIMER = null;
 var FRUIT_CANCEL_SPEED = 7500;
 var FRUIT = null;
 
-const DONUT = loadImage("img/donut.png");
-const MENORAH = loadImage("img/menorah.png");
-const DREIDEL = loadImage("img/dreidel.png");
+var DONUT = loadImage("img/donut.png");
+var MENORAH = loadImage("img/menorah.png");
+var DREIDEL = loadImage("img/dreidel.png");
 
 function initFruits() { 
 	var canvas = document.getElementById('canvas-fruits');
@@ -187,242 +187,23 @@ function drawFruit(ctx, f, x, y, size) {
 }
 
 function drawKey(ctx, x, y, size) { 
-	ctx.translate(x - (size / 2), y - (size / 2));
-	
-	ctx.fillStyle = "#52c4cc";
-	ctx.beginPath();
-	ctx.rect(size / 3, 5, (size - (size / 3)), size / 3);
-	ctx.rect((size / 6) * 3, 2, (size - ((size / 3) * 2)), size / (size / 3));
-	ctx.fill();
-	
-	ctx.fillStyle = "#000";
-	ctx.beginPath();
-	ctx.rect((size / 6) * 3, (size / 6), (size - ((size / 3) * 2)), size / 10);
-	ctx.fill();
-	
-	ctx.strokeStyle = "#ccc";
-	ctx.lineWidth = "3";
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2) + 2, size - 4);
-	ctx.lineTo((size / 2) + 2, size / 2);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2) + 7, size - 4);
-	ctx.lineTo((size / 2) + 7, size / 2);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2) + 4, size - 4);
-	ctx.lineTo((size / 2) + 4, size - 1);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2) + 5, size - 4);
-	ctx.lineTo((size / 2) + 5, size - 1);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2) + 9, (size / 2) + 2);
-	ctx.lineTo((size / 2) + 9, (size / 2) + 5);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2) + 10, (size / 2) + 8);
-	ctx.lineTo((size / 2) + 10, (size / 2) + 11);
-	ctx.stroke();
-
-	
-	ctx.closePath();
+	drawImage(ctx, "img/menorah.png", x, y, size);
 }
 
 function drawBell(ctx, x, y, size) { 
-
-	ctx.translate(x - (size / 2), y - (size / 2));
-	
-	ctx.oval(size / 2, size / 2, size / 1, size - 5);
-	ctx.fillStyle = "#fff200";
-	ctx.fill();
-	
-	ctx.beginPath();
-	ctx.rect(4, size - (size / 2.5) - 3, size - 8, (size / 2.5) - 1);
-	ctx.fill();
-	
-	ctx.fillStyle = "#52c4cc";
-	ctx.beginPath();
-	ctx.rect(4 + 2, size - 6, (size - 12), 5);
-	ctx.fill();
-	
-	ctx.fillStyle = "#8c8c8c";
-	ctx.beginPath();
-	ctx.rect(size / 2, size - 6, 5, 5);
-	ctx.fill();
-	
-	ctx.closePath();
-	
-	ctx.strokeStyle = "#bbb";
-	ctx.lineWidth = "2";
-	ctx.beginPath();
-	ctx.moveTo(15, 7);
-	ctx.arcTo(8, 7, 8, 30, 9);
-	ctx.stroke();
-	
-	ctx.closePath();
+	drawImage(ctx, "img/dreidel.png", x, y, size);
 }
+
 function drawGalboss(ctx, x, y, size) { 
-
-	ctx.translate(x - (size / 2), y - (size / 2) + 1);
-
-	ctx.strokeStyle = "#868df5";
-	ctx.lineWidth = "5";
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2), (size / 2) + (size / 4));
-	ctx.arcTo(size - 1, (size / 2) + 4, size - 1, (size / 2) + 1, (size / 3));
-	ctx.lineTo(size - 1, 4);
-	ctx.stroke();
-	ctx.closePath();
-	
-	ctx.beginPath();
-	ctx.moveTo((size / 2), (size / 2) + (size / 4));
-	ctx.arcTo(1, (size / 2) + 4, 1, (size / 2) + 1, (size / 3));
-	ctx.lineTo(1, 4);
-	ctx.stroke();
-	ctx.closePath();
-	
-	ctx.strokeStyle = "#ffff00";
-	ctx.lineWidth = "6";
-	
-	ctx.beginPath();
-	ctx.moveTo(size / 2, (size / 2) - 2);
-	ctx.lineTo(size / 2, size);
-	ctx.stroke();
-	
-	ctx.fillStyle = "#ffff00";
-	
-	ctx.beginPath();
-	ctx.arc((size / 2), size / 3.5, size / 2.5, 0, Math.PI * 1);
-	ctx.fill();
-	ctx.closePath();
-	
-	ctx.strokeStyle = "#000";
-	ctx.lineWidth = "3";
-	
-	ctx.beginPath();
-	ctx.moveTo(size / 2 - (size / 6), (size / 2) + 1);
-	ctx.lineTo(size / 2 - (size / 6), size);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo(size / 2 + (size / 6), (size / 2) + 1);
-	ctx.lineTo(size / 2 + (size / 6), size);
-	ctx.stroke();
-	
-	ctx.strokeStyle = "#ff3f3f";
-	ctx.lineWidth = "4";
-	
-	ctx.beginPath();
-	ctx.moveTo(size / 2, (size / 2));
-	ctx.lineTo((size / 2), 2);
-	ctx.stroke();
-	
-	ctx.moveTo((size / 2) + 1, 2);
-	ctx.lineTo((size / 2) - 8, (size / 2) - (size / 6));
-	ctx.stroke();
-	
-	ctx.moveTo((size / 2) - 1, 2);
-	ctx.lineTo((size / 2) + 8, (size / 2) - (size / 6));
-	ctx.stroke();
-	
-	ctx.closePath();
-	
+	drawImage(ctx, "img/donut.png", x, y, size);
 }
+
 function drawMelon(ctx, x, y, size) { 
-
-	ctx.translate(x - (size / 2), y - (size / 2));
-	
-	ctx.fillStyle = "#198122";
-	ctx.beginPath();
-	ctx.moveTo(size / 2, size / 6);
-	ctx.arc(size / 2, size / 6, size / 1.15, 1.1, 2.5, true);
-	ctx.fill();
-	ctx.closePath();
-
-	ctx.beginPath();
-	ctx.fillStyle = "#ACFB77";
-	ctx.moveTo(size / 2, size / 6);
-	ctx.arc(size / 2, size / 6, size / 1.3, 1.1, 2.5, true);
-	ctx.fill();
-	ctx.closePath();
-
-	ctx.beginPath();
-	ctx.fillStyle = "#F92F2F";
-	ctx.moveTo(size / 2, size / 6);
-	ctx.arc(size / 2, size / 6, size / 1.7, 1.1, 2.5, true);
-	ctx.fill();
-	ctx.closePath();
-
-	var mod = size / 23;
-	ctx.beginPath();
-	ctx.fillStyle = "black";
-	ctx.moveTo(12 * mod, 9 * mod);
-	ctx.arc(12 * mod, 9 * mod, size / 12, 1.1, 2.5, true);
-	ctx.moveTo(13 * mod, 12 * mod);
-	ctx.arc(13 * mod, 12 * mod, size / 12, 1.1, 2.5, true);
-	ctx.moveTo(10.5 * mod, 12 * mod);
-	ctx.arc(10.5 * mod, 12 * mod, size / 12, 1.1, 2.5, true);
-	ctx.fill();
-	ctx.closePath();
+	drawImage(ctx, "img/menorah.png", x, y, size);
 }
+
 function drawApple(ctx, x, y, size) { 
-
-	ctx.translate(x - (size / 2), y - (size / 2) - 2);
-	
-	ctx.fillStyle = "#ff0000";
-	ctx.beginPath();
-	ctx.arc(size / 2, size / 2 + size / 9, (size / 2.1), Math.PI * 2, -Math.PI * 2, true);
-	ctx.fill();
-	ctx.closePath();
-
-	ctx.fillStyle = "#ff0000";
-	ctx.beginPath();
-	ctx.arc(9, size - 3, (size / 4.5), Math.PI * 2, -Math.PI * 2, true);
-	ctx.arc(size - 8, size - 3, (size / 4.5), Math.PI * 2, -Math.PI * 2, true);
-	ctx.fill();
-	ctx.closePath();
-	
-	ctx.fillStyle = "black";
-	ctx.beginPath();
-	ctx.arc(size / 2, size / 6, (size / 7), Math.PI * 2, -Math.PI * 2, true);
-	ctx.fill();
-	ctx.closePath();
-
-	var mod = size / 23;
-	ctx.strokeStyle = "#24da1c";
-	ctx.lineWidth = 2;
-	ctx.beginPath();
-	
-	ctx.beginPath();
-	ctx.moveTo(13 * mod + 2, (size / 9) + 4);
-	ctx.lineTo( (13 * mod) - (size / 4), (size / 9) + 1);
-	ctx.stroke();
-	
-	ctx.beginPath();
-	ctx.moveTo(13 * mod + 2, (size / 9) + 4);
-	ctx.lineTo( (13 * mod) - (size / 2.5), (size / 9) + 3);
-	ctx.stroke();
-	
-	ctx.strokeStyle = "#bbb";
-	ctx.lineWidth = "2";
-	ctx.beginPath();
-	ctx.moveTo(12, 11);
-	ctx.arcTo(5, 11, 5, 30, 7);
-	ctx.stroke();
-	
-	
-	
-	ctx.closePath();
+	drawImage(ctx, "img/dreidel.png", x, y, size);
 }
 
 function drawOrange(ctx, x, y, size) { 
@@ -442,8 +223,8 @@ function drawImage(ctx, url, x, y, size) {
 	img.context = ctx;
 	const trueX = x - (size / 2);
 	const trueY = y - (size / 2) + 1;
-	console.log(img);
-	ctx.drawImage(img, trueX, trueY, size, size);
+
+	img.onload = () => ctx.drawImage(img, trueX, trueY, size, size);
 }
 
 function loadImage(url) {

@@ -3,12 +3,16 @@
 <html>
 
 	<head>
-	
+		<title>Pac-manukkah</title>
+		<link rel="icon" href="img/dreidel.png">
+
 		<meta property="og:image" content="https://pacman-e281c.firebaseapp.com/img/preview.png">
 		<meta property="og:url" content="https://pacman-e281c.firebaseapp.com/">
 		<meta property="og:description" content="Pac-Man game written in HTML5 + CSS3 + jQuery with Canvas. This WebApp is a Responsive Web Design (RWD) website.">
 		<meta property="og:title" content="Pac-makkuh">
 
+		<img id="dreidel" src="img/dreidel.png" alt="dreidel" style="display: none;"/>
+		<img id="menorah" src="img/menorah.png" alt="menorah" style="display: none;"/>
 		<img id="donut" src="img/donut.png" alt="donut" style="display: none;"/>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
@@ -177,8 +181,6 @@
 				});
 			});
 		</script>
-	
-		<title>Pac-manukkah</title>
 	</head>
 		
 	<body>
@@ -195,9 +197,10 @@
 					<tr><td>Arrow Down : </td><td>Move Down</td></tr>
 					<tr><td>Arrow Up : </td><td>Move Up</td></tr>
 					<tr><td colspan="2">&nbsp;</td></tr>
-					<tr><td>P / ESC: </td><td>PAUSE</td></tr>
+					<tr><td>P / ESC: </td><td>PAUSE / RESUME</td></tr>
 				</tbody>
 			</table>
+			<p>Click or tap to dismiss</p>
 		</div>
 
 		<div id="splash">
